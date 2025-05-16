@@ -4,31 +4,12 @@ import { agregarNominacion, obtenerNominaciones, obtenerConfiguracion } from './
 const form = document.querySelector('form');
 const nominacionesContainer = document.getElementById('nominaciones-container');
 const formContainer = document.querySelector('.form-container');
-const estadoSistema = document.createElement('div');
-estadoSistema.className = 'estado-sistema';
-document.querySelector('.nominaciones-activas').insertBefore(estadoSistema, nominacionesContainer);
 
 // Función para actualizar el estado del sistema
 const actualizarEstadoSistema = async () => {
     try {
         const config = await obtenerConfiguracion();
-        
-        if (!config.nominacionesActivas) {
-            formContainer.innerHTML = `
-                <div class="mensaje-sistema error">
-                    <i class="fas fa-times-circle"></i>
-                    <p>${config.mensajeSistema || 'Las nominaciones están cerradas en este momento.'}</p>
-                </div>
-            `;
-        } else {
-            formContainer.style.display = 'block';
-            estadoSistema.innerHTML = `
-                <div class="mensaje-sistema activo">
-                    <i class="fas fa-check-circle"></i>
-                    <p>${config.mensajeSistema || 'Las nominaciones están abiertas. ¡Envía tu nominación!'}</p>
-                </div>
-            `;
-        }
+        formContainer.style.display = 'block';
     } catch (error) {
         console.error('Error al actualizar estado del sistema:', error);
     }
@@ -46,9 +27,6 @@ const cargarNominacionesActivas = async () => {
             <div class="ver-todas">
                 <a href="todas-nominaciones.html" class="btn-ver-todas">
                     <i class="fas fa-list"></i> Ver todas las nominaciones
-                </a>
-                <a href="votar.html" class="btn-ver-todas">
-                    <i class="fas fa-vote-yea"></i> Ir a votar
                 </a>
             </div>
             ${nominacionesRecientes
