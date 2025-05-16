@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - Premios Darwing</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="nominaciones.html"><i class="fas fa-trophy"></i> Nominaciones</a></li>
+                <li><a href="todas-nominaciones.html"><i class="fas fa-list"></i> Todas las Nominaciones</a></li>
+                <li><a href="ediciones.html"><i class="fas fa-history"></i> Ediciones Anteriores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="admin-section">
+            <div class="admin-container">
+                <h2>Panel de Administración</h2>
+                
+                <div class="admin-card">
+                    <h3>Estado del Sistema</h3>
+                    <div class="status-controls">
+                        <div class="status-toggle">
+                            <label class="switch">
+                                <input type="checkbox" id="toggleNominaciones">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Nominaciones: <span id="estadoNominaciones">Inactivas</span></span>
+                        </div>
+                        <div class="status-message">
+                            <label for="mensajeSistema">Mensaje del Sistema (Nominaciones):</label>
+                            <input type="text" id="mensajeSistema" placeholder="Mensaje que se mostrará a los usuarios">
+                        </div>
+
+                        <div class="status-toggle">
+                            <label class="switch">
+                                <input type="checkbox" id="toggleVotaciones">
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Votaciones: <span id="estadoVotaciones">Inactivas</span></span>
+                        </div>
+                        <div class="status-message">
+                            <label for="mensajeVotaciones">Mensaje del Sistema (Votaciones):</label>
+                            <input type="text" id="mensajeVotaciones" placeholder="Mensaje que se mostrará a los usuarios">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Estadísticas</h3>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <i class="fas fa-trophy"></i>
+                            <span id="totalNominaciones">0</span>
+                            <p>Total Nominaciones</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-vote-yea"></i>
+                            <span id="totalVotos">0</span>
+                            <p>Total Votos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h3>Gestionar Nominaciones</h3>
+                    <div id="nominacionesContainer" class="nominaciones-lista">
+                        <!-- Las nominaciones se cargarán dinámicamente aquí -->
+                    </div>
+                </div>
+
+                <button id="btnGuardar" class="btn-submit">
+                    <i class="fas fa-save"></i> Guardar Cambios
+                </button>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h2>Gestionar Ediciones Anteriores</h2>
+            <form id="edicion-form" class="edicion-form">
+                <div class="form-group">
+                    <label for="nombre-edicion">Nombre de la Edición:</label>
+                    <input type="text" id="nombre-edicion" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion-edicion">Descripción:</label>
+                    <textarea id="descripcion-edicion" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="ganadores-edicion">Ganadores (separados por comas):</label>
+                    <textarea id="ganadores-edicion" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Agregar Edición</button>
+            </form>
+
+            <div id="ediciones-lista" class="ediciones-lista">
+                <!-- Las ediciones se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h2>Gestionar Ganadores</h2>
+            <form id="ganador-form" class="edicion-form">
+                <div class="form-group">
+                    <label for="nombre-ganador">Nombre del Ganador:</label>
+                    <input type="text" id="nombre-ganador" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion-ganador">Descripción:</label>
+                    <textarea id="descripcion-ganador" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Agregar Ganador</button>
+            </form>
+
+            <div id="ganadores-lista" class="ediciones-lista">
+                <!-- Los ganadores se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            
+        </div>
+        <p>&copy; 2025 Premios Darwing. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/admin.js"></script>
+    <script type="module" src="js/ediciones-admin.js"></script>
+    <script type="module" src="js/ganadores-admin.js"></script>
+</body>
+</html> 

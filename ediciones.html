@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ediciones Anteriores - Premios Darwing</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="nominaciones.html"><i class="fas fa-trophy"></i> Nominaciones</a></li>
+                <li><a href="todas-nominaciones.html"><i class="fas fa-list"></i> Todas las Nominaciones</a></li>
+                <li><a href="ediciones.html" class="active"><i class="fas fa-history"></i> Ediciones Anteriores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="ediciones-section">
+            <h2>Ediciones Anteriores</h2>
+            <div id="ediciones-container" class="ediciones-lista">
+                <!-- Las ediciones se cargarán dinámicamente aquí -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            
+        </div>
+        <p>&copy; 2025 Premios Darwing. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/ediciones.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html> 

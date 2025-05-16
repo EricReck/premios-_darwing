@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votar - Premios Darwing</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="nominaciones.html"><i class="fas fa-trophy"></i> Nominaciones</a></li>
+                <li><a href="todas-nominaciones.html"><i class="fas fa-list"></i> Todas las Nominaciones</a></li>
+                <li><a href="ediciones.html"><i class="fas fa-history"></i> Ediciones Anteriores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="votacion-section">
+            <div class="votacion-container">
+                <h2>Votar Nominaciones</h2>
+                <div class="votacion-info">
+                    <p><i class="fas fa-info-circle"></i> Puedes votar por un máximo de 2 nominaciones.</p>
+                </div>
+                <form id="votacionForm">
+                    <div class="form-group">
+                        <label for="nombreVotante">
+                            <i class="fas fa-user"></i> Tu Nombre
+                        </label>
+                        <input type="text" id="nombreVotante" name="nombreVotante" required>
+                    </div>
+
+                    <div class="nominaciones-votacion" id="nominaciones-votacion">
+                        <!-- Las nominaciones se cargarán dinámicamente -->
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-vote-yea"></i> Enviar Votos
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            
+        </div>
+        <p>&copy; 2025 Premios Darwing. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/votar.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html> 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas las Nominaciones - Premios Darwing</title>
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="nominaciones.html"><i class="fas fa-trophy"></i> Nominaciones</a></li>
+                <li><a href="ediciones.html"><i class="fas fa-history"></i> Ediciones Anteriores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="nominaciones-section">
+            <div class="nominaciones-container">
+                <h2>Todas las Nominaciones</h2>
+                <div class="nominaciones-grid" id="todas-nominaciones-container">
+                    <!-- Las nominaciones se cargarán dinámicamente -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Logo Premios Darwing">
+            </div>
+            
+        </div>
+        <p>&copy; 5 Premios Darwing. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="js/firebase-config.js"></script>
+    <script type="module" src="js/todas-nominaciones.js"></script>
+</body>
+</html> 
