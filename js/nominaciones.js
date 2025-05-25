@@ -21,7 +21,7 @@ const cargarNominacionesActivas = async () => {
         const nominaciones = await obtenerNominaciones();
         
         // Mostrar solo las 3 nominaciones más recientes
-        const nominacionesRecientes = nominaciones.slice(0, 3);
+        const nominacionesRecientes = nominaciones.slice(0, 1);
         
         nominacionesContainer.innerHTML = `
             <div class="ver-todas">
