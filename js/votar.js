@@ -62,9 +62,9 @@ const cargarNominacionesVotacion = async () => {
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
                 const checkedBoxes = document.querySelectorAll('.voto-input:checked');
-                if (checkedBoxes.length > 2) {
+                if (checkedBoxes.length > 1) {
                     checkbox.checked = false;
-                    mostrarMensaje('Solo puedes votar por un máximo de 2 nominaciones', 'error');
+                    mostrarMensaje('Solo puedes votar por un máximo de 1 nominación', 'error');
                 }
             });
         });
